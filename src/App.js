@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Footer from "./footer/Footer";
+import {
+  Button,
+  Container,
+  Tab,
+  Tabs,
+  BottomNavigation,
+  BottomNavigationAction,
+} from "@mui/material";
+import { Favorite, HeartBroken } from "@mui/icons-material";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Tabs centered>
+        <Tab label="All Books" />
+        <Tab label="item2" />
+        <Tab label="item3" />
+      </Tabs>
+      <Button variant="contained">Hello, World!</Button>
+      <BottomNavigation showLabels>
+        <BottomNavigationAction label="Favorites" icon={<Favorite />} />
+        <BottomNavigationAction label="Dislikes" icon={<HeartBroken />} />
+      </BottomNavigation>
+      <Footer />
+    </Container>
   );
 }
 
